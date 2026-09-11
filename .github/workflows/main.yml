@@ -5,6 +5,10 @@ on:
     branches: [ "main", "master" ]
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: ./NOMBRE_DE_TU_CARPETA # <--- PON AQUÍ EL NOMBRE EXACTO DE TU CARPETA
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,4 +37,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: NOMBRE_DE_TU_CARPETA/build/app/outputs/flutter-apk/app-release.apk
